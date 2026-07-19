@@ -23,6 +23,7 @@
 - [OBS导致显卡占用飙升进而导致游戏帧数大幅下降](#obs导致显卡占用飙升进而导致游戏帧数大幅下降)
 - [天选4锐龙版2023使用Niri关闭屏幕后会自己亮屏](#天选4锐龙版2023使用niri关闭屏幕后会自己亮屏)
 - [以英文的LC\_CTYPE环境变量启动steam导致无法进行中文输入](#以英文的lc_ctype环境变量启动steam导致无法进行中文输入)
+- [btop无法显示AMD核显信息](#btop无法显示amd核显信息)
 
 ## efibootmgr里面有超级多启动项
 
@@ -368,3 +369,11 @@ env LC_CTYPE=en_US.UTF-8 GTK_IM_MODULE=xim XMODIFIERS=@im=fcitx steam
 ```
 
 只有加上`GTK_IM_MODULE=xim`的能用输入法。
+
+## btop无法显示AMD核显信息
+
+需要额外安装可选依赖
+
+```
+sudo pacman -S rocm-smi-lib
+```
