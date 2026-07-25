@@ -91,5 +91,27 @@
 
     通常是 `F10` 键
 
+## Nvidia用户进入Linux环境卡死的解决办法
+
+<details close><summary>[展开/收起]</summary>
+<br>
+
+如果你只有 N 卡，或者虽然是双显卡但是开启了 N 卡独显直连，那么在进入 Live 环境的时候可能会卡死，这是显卡驱动缺失导致的，解决办法有数个：
+
+- 方法一：使用有 N 卡驱动的 ISO
+
+    部分发行版额外提供了带 N 卡驱动的 ISO
+
+- 方法二：兼容模式启动
+
+    部分发行版的 ISO 可能会提供`compatible`选项，或者`nomodeset`选项。
+
+- 方法三：编辑内核参数
+
+    ISO 的引导程序通常使用 `grub`（位置对其左上角），或者 `systemd boot`（位置居中）。无论是哪个，按`E`键都可以进入编辑模式。 `grub` 的话在`LINUX`开头的那行末尾加上`nomodeset`；`systemd-boot` 的话只会出现一行尖端的内容，在末尾加上`nomodeset`。
+
+</details>
+<br>
+
 下一节： [Linux Mint 入门指南](./linuxmint/Linuxmint入门.md)  |  [CachyOS 入门指南](./cachyos/CachyOS.md) | [Arch Linux 安装教程](./archlinux/安装ArchLinux.md) |
 
