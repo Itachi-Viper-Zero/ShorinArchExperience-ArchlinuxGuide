@@ -1,5 +1,5 @@
 
-# 请先阅读：[Arch Linux 社区行为准则](https://wiki.archlinuxcn.org/wiki/%E8%A1%8C%E4%B8%BA%E5%87%86%E5%88%99)
+# [请先阅读此页面的行为准则](https://wiki.archlinuxcn.org/wiki/%E8%A1%8C%E4%B8%BA%E5%87%86%E5%88%99)
 
 <details><summary>然后再进行 Arch Linux 的安装。</summary>
 <br>
@@ -561,30 +561,59 @@ passwd
 
    `os-prober` 和 `exfat-utils` 用来搜索 Win11（不配置双系统的话可以不装）。
 
-2. 安装 GRUB
+2. 安装引导
 
    ```bash
    grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/efi --bootloader-id=ARCH
    ```
 
-   `grub-install` 安装 GRUB；
+   >`grub-install` 安装 GRUB；
 
-   `--target` 指定架构；
+   >`--target` 指定架构；
 
-   `--efi-directory` 指定 ESP 位置；
+   >`--efi-directory` 指定 ESP 位置；
 
-   `--boot-directory` 指定 GRUB 的安装目录；
+   >`--boot-directory` 指定 GRUB 的安装目录；
 
-   `--bootloader-id` 任意取一个启动项名字；
+   >`--bootloader-id` 取一个启动项名字；
 
-   PS：如果是移动设备或者主板只支持默认的 EFI 路径要加上 `--removable` 选项。 **建议添加此选项**
-   `--removable` 将 GRUB EFI 程序安装到 UEFI 默认后备启动路径 `/efi/EFI/BOOT/BOOTX64.EFI`
-   
-   主板恢复默认设置、更新固件、清除 EFI 启动变量，或者将系统盘移动到另一台电脑，原有的 NVRAM 启动项可能不存在。此时 EFI 分区中的 GRUB 文件仍然存在，但主板可能无法自动找到它，表现为能够识别系统盘，却无法进入 GRUB。
+   上面这段命令在 `/efi/EFI/ARCH` 目录生成 `grubx64.efi` 文件，同时在主板的存储芯片（NVRAM）中生成对应的启动项。
 
-   详见[issues:主板能识别系统盘但无法进入 GRUB](./issues.md#主板能识别系统盘但无法进入-grub)
+3. 可选：安装回退引导
 
-   > **双系统注意：如果多个系统共用同一个 EFI 系统分区，执行前应确认 `/efi/EFI/BOOT/BOOTX64.EFI` 是否已被其他引导程序使用，避免覆盖现有的后备启动文件。**
+   当主板找不到 NVRAM 中记录的启动文件时，会尝试从`回退启动文件`启动系统，该启动文件所在路径被称为`可移动媒体启动路径`，通常是 `ESP/EFI/BOOT/BOOTx64.EFI`。
+
+   >`ESP`指代 ESP 的挂载点，在本文中是 `/efi`
+
+   如果你符合以下情况中的任意一个，推荐安装回退引导，避免找不到启动项：
+
+   - 你安装系统使用的是移动硬盘或U盘之类的可移动存储设备，想要在任何电脑上即插即用；
+
+      >因为我们不可能在所有电脑的主板上存储一个启动项。
+
+   - 你是微星主板；
+
+      >因为部分主板仅支持回退启动文件路径。
+
+   - 你日后可能会重置主板或者更新固件；
+
+      >因为这类操作可能会清除主板的 NVRAM 上储存的启动项导致引导丢失。
+
+   - 你没有和包括 Windows 在内的其他系统共享启动分区
+
+      >因为可能会出现回退启动文件相互覆盖的情况
+
+   具体安装命令：
+
+   ```
+   grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/efi --removable --no-nvram
+   ```
+
+   >`--removable` 将引导安装至回退路径
+
+   >`--no-nvram` 不记录进主板的存储芯片中
+
+   如果你日后出现了启动项丢失问题，可以参考：[issues:主板能识别系统盘但无法进入 GRUB](./issues.md#主板能识别系统盘但无法进入-grub)
    
 4. 编辑 GRUB 的源文件
 
@@ -622,9 +651,12 @@ passwd
 
 6. 生成 GRUB 的配置文件
 
+
    ```bash
    grub-mkconfig -o /boot/grub/grub.cfg
    ```
+
+   `grub-mkconfig`命令会生成启动流程，加上 `-o` 选项将输出保存到文件，文件路径是`/boot/grub/grub.cfg`
 
 >以上的 GRUB 配置方法已经足够使用，但存储在 FAT 文件系统上的 `grub.cfg` 无法被 Btrfs 快照回档，极端情况下仍会出现问题，例如在快照启动项里生成了 `grub.cfg` 导致永远启动进快照启动项。如果你想要绝对稳定的回档，看进阶内容：[可选：GRUB 在 Btrfs 文件系统下的最佳配置方法](附录.md#grub-在-btrfs-文件系统的最佳配置方法)
 
