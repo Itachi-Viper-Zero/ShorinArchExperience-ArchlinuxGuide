@@ -7,7 +7,7 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
 因为源代码是公开的，并且使用的版权协议允许任何人自由进行修改、分发等操作，而不同开发者的理念、目的、偏好、发行策略不同，也就产生了各式各样的 Linux 发行版。
 
-从 [Wikipedia List of Linux distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions) 页面可以看到一张特别长的发行版分支图。这其中最大，最值得重点提及的是 [Debian](https://www.debian.org/) 系发行版。即使是不熟悉 Linux 的人也可能听说过 Ubuntu（乌班图），它就是基于 Debian 制作的发行版。如果有一个软件要适配 Linux，那么它大概率会先出甚至只出 Debian 系的 `.deb` 后缀的软件包。虽然其他发行版通过一些额外操作也能装上 `.deb` 包，但是免不了要折腾，直接用 Debian 系发行版通常会更方便。
+从 [Wikipedia List of Linux distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions) 页面可以看到一张特别长的发行版分支图。这其中最大，最值得重点提及的是 [Debian](https://www.debian.org/) 系发行版。如果有一个软件要适配 Linux，那么它大概率会先出，甚至只出 Debian 系的 `.deb` 后缀的软件包。虽然其他发行版通过一些额外操作也能装上 `.deb` 包，但是免不了要折腾，直接用 Debian 系发行版通常会更方便。
 
 ## 选择合适的发行版
 
@@ -24,9 +24,9 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
   
   >这还涉及到 Linux 显示协议的变迁。现在大部分桌面和发行版都已经转向新的 Wayland 协议，但是 Wayland 严格的权限管理加上软件厂商消极的适配开发，~~点名批评国产厂商~~，常常导致软件在 Wayland 上有各种问题，而 Linux Mint 仍将 X11 作为可选项，可以获得更稳定更完整的使用体验。
 
-  如果想更进一步，获得最佳的桌面端 Linux 体验，[Arch Linux](https://archlinux.org/) 是最佳选择，因为 Arch 处在精简、易用、自由和好玩的平衡点。
+  如果想更进一步，获得最佳的桌面端 Linux 体验，处在精简、易用、自由和好玩的平衡点的 [Arch Linux](https://archlinux.org/) 是最佳选择。
 
-  >Arch 拥有最新的软件、最详尽的文档、最偏向桌面端日用的社区氛围，甚至还有 Steam 的背书。软件生态由用户仓库（AUR）上用户提供的各种一键安装脚本扩充，虽然存在安全隐患，但是非常丰富，非常方便。就像在 Windows 上不要随意安装软件那样，在 Arch 也不要随意安装 AUR 上的包。
+  >Arch 拥有最新的软件、最详尽的文档、最偏向桌面端日用的社区氛围，甚至还有 Steam 的背书。软件生态由用户上传到 AUR 的各种一键安装脚本扩充，虽然存在安全隐患，但是非常丰富，非常方便。就像在 Windows 上不要随意安装软件那样，在 Arch 也不要随意安装 AUR 上的包。
 
   Arch 的安装是纯命令行，可能有些复杂，如果想要安装简单，开箱即用的 Arch Linux，以下是我推荐的 Arch 衍生发行版：
 
@@ -54,7 +54,7 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
   ![](pictures/home/garudapreview.webp)
 
-## 其他推荐的发行版
+## 其他推荐
 
 以下是值得尝试的发行版
 
@@ -62,7 +62,7 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
   >你一定听说过 CentOS 吧
 
-  永远处在 Linux 技术的最前沿，~~有人说这是当小白鼠~~。红帽是现代 Linux 技术生态的奠基者，Fedora 作为红帽系发行版的上游，如果以后想往这个方向发展职业的话一定要试试。
+  永远处在 Linux 技术的最前沿，~~有人说这是当小白鼠~~。红帽是现代 Linux 技术生态的奠基者，Fedora 作为红帽系发行版的上游，如果以后想往这个方向发展职业的话推荐尝试。
 
 - [PikaOS Linux](https://wiki.pika-os.com/en/home)
 
@@ -70,9 +70,15 @@ Linux `/lɪnəks/` 只是一个内核，我们说 Linux 发行版的时候指的
 
   基于 Debian 开发分支的游戏发行版。Debian 常常因软件包老旧被诟病，而软件包很新的开发分支又不够稳定，PikaOS 很好地解决了这些问题。推荐给想用 Debian 系发行版，同时又想要软件够新的人。
 
-## 发行版避雷
+- [Bazzite](https://bazzite.gg/)
 
-  以下是我不建议当作桌面端日用的发行版。
+  >“社区版 SteamOS”
+
+  如果你想自己组装一台类似 Steam Machine 的主机用于游玩 Steam 游戏，那么 Bazzite 会是不错的选择。他们甚至做了专门的游戏模式，不运行任何桌面环境，从而将系统资源全部用于游戏，以提升性能和稳定性。
+
+## 避雷
+
+  以下是我目前不建议当作桌面端日用的发行版。
 
 - [Pop!_OS](https://system76.com/pop/)
 
