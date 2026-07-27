@@ -108,7 +108,7 @@
 
 - 方法三：编辑内核参数
 
-    ISO 的引导程序通常使用 `grub`（位置对其左上角），或者 `systemd boot`（位置居中）。无论是哪个，按`E`键都可以进入编辑模式。 `grub` 的话在`LINUX`开头的那行末尾加上`nomodeset`；`systemd-boot` 的话只会出现一行尖端的内容，在末尾加上`nomodeset`。
+    ISO 的引导程序通常使用 `grub`（位置对其左上角），或者 `systemd boot`（位置居中）。无论是哪个，按`E`键都可以进入编辑模式。 `grub` 的话在`LINUX`开头的那行末尾加上`nomodeset`；`systemd-boot` 的话只会出现一行简短的内容，在末尾加上`nomodeset`。
 
 </details>
 <br>
