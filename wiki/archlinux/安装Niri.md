@@ -134,7 +134,7 @@ sudo pacman -S fish
 
     >`hotkey-overlay-title="Open a Terminal: alacritty"` 设置 `Super+Shift+/` 打开的界面里的显示内容。改成 `=null` 可以隐藏。
 
-    把 `spawn "alacritty"` 改成 `spawn "kitty" "-e" "fish"`
+    以 kitty 举例，把 `spawn "alacritty"` 改成 `spawn "kitty" "-e" "fish"`
 
     - 关于 Niri 设置自定义快捷键
 
@@ -340,7 +340,7 @@ mouse {
 ```text
 environment {
     LANG "zh_CN.UTF-8"
-    LANGUAGE "zh_CN.UTF-8"
+    LANGUAGE "zh_CN"
 }
 ```
 
