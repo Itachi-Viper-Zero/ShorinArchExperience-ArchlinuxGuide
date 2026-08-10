@@ -120,7 +120,7 @@ ping bilibili.com #确认网络正常
 
 Ctrl+C 可以中止正在运行的命令。
 
-- 使用` iwctl` 命令行工具连接 wifi（此工具由 `iwd` 提供）
+- 使用`iwctl` 命令行工具连接 wifi（此工具由 `iwd` 提供）
 
   1. 启动
 
@@ -627,7 +627,7 @@ passwd
 
    - 显示开机日志
 
-     `GRUB_CMDLINE_LINUX_DEFAULT` 里面去掉 `quiet` 以显示开机日志。再把 `loglevel` 日志等级设置为 5。`loglevel` 共 7 级，5 级是一个信息量的平衡点。
+     `GRUB_CMDLINE_LINUX_DEFAULT` 里面去掉 `quiet` 以显示开机日志。再把 `loglevel` 日志等级设置为 5。`loglevel` 共 8 级，5 级是一个信息量的平衡点。
 
    - 禁用 watchdog
 
@@ -697,7 +697,7 @@ ZRAM 将内存的部分空间用作交换空间，如果你没有配置 Swap，�
    在 `GRUB_CMDLINE_LINUX_DEFAULT=""` 里写入 `zswap.enabled=0`。
 
    ```ini
-   GRUB_CMDLINE_LINUX_DEFAULT="... zswap.enabled=0 ... "
+   GRUB_CMDLINE_LINUX_DEFAULT="... zswap.enabled=0 ..."
    ```
 
 4. 重新生成 GRUB 的配置文件
