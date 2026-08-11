@@ -14,7 +14,7 @@
 
 - [手动安装省流版](手动安装省流版.md)
 
->视频教程：[【从「Linux Mint 入门」到「Arch Linux 安装详解」桌面端 Linux 入门的最佳路径】](https://www.bilibili.com/video/BV19DBqB4EY4/?share_source=copy_web&vd_source=1c6a132d86487c8c4a29c7ff5cd8ac50)
+>视频教程（如果内容和文档不同请以文档为准）：[【从「Linux Mint 入门」到「Arch Linux 安装详解」桌面端 Linux 入门的最佳路径】](https://www.bilibili.com/video/BV19DBqB4EY4/?share_source=copy_web&vd_source=1c6a132d86487c8c4a29c7ff5cd8ac50)
 
 新手建议先手动安装，把其他安装方式当作重装系统的便利手段，否则日后出现问题自己不会解决。如果手动安装太难，就先使用开箱即用的 Arch，比如 CachyOS。
 
