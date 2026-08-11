@@ -573,7 +573,7 @@ passwd
 
    >`--efi-directory` 指定 ESP 位置；
 
-   >`--boot-directory` 可以指定 GRUB 的安装目录，如果不写的话就是 /boott/grub
+   >`--boot-directory` 可以指定 GRUB 的安装目录，如果不写的话就是 /boot/grub
 
    >`--bootloader-id` 取一个启动项名字；
 
