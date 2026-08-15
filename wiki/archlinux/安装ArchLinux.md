@@ -554,12 +554,12 @@ passwd
 1. 安装必要的软件包
 
    ```shell
-   pacman -S grub efibootmgr os-prober exfat-utils
+   pacman -S grub efibootmgr os-prober fuse3
    ```
 
    `efibootmgr` 管理 UEFI 启动项；
 
-   `os-prober` 和 `exfat-utils` 用来搜索 Win11（不配置双系统的话可以不装）。
+   `os-prober` 和 `fuse3` 用于双系统配置。
 
 2. 安装引导
 
